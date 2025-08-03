@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Case Details</title></head>
+<body>
+<h1>Case Metadata</h1>
+<ul>
+  <li><strong>Parties:</strong> {{ data.parties }}</li>
+  <li><strong>Filing Date:</strong> {{ data.filing_date }}</li>
+  <li><strong>Next Hearing:</strong> {{ data.next_hearing }}</li>
+</ul>
+
+{% if data.latest_order %}
+  <h2>Latest Order ({{ data.latest_order.date }})</h2>
+  <a href="{{ url_for('download') }}?url={{ data.latest_order.pdf_url }}">Download PDF</a>
+{% else %}
+  <p>No orders/judgments found.</p>
+{% endif %}
+<br><a href="{{ url_for('index') }}">Lookup another case</a>
+</body>
+</html>
