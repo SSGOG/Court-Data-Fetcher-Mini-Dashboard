@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Court Case Lookup</title></head>
+<body>
+<h1>Delhi High Court Case Lookup</h1>
+<form method="post">
+  <label>Case Type:
+    <select name="case_type">
+      <option value="Civil">Civil</option>
+      <option value="Criminal">Criminal</option>
+    </select>
+  </label><br>
+  <label>Case Number: <input name="case_number" /></label><br>
+  <label>Filing Year: <input name="filing_year" /></label><br>
+  <button type="submit">Fetch</button>
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>{% for m in messages %}<li style="color:red">{{m}}</li>{% endfor %}</ul>
+  {% endif %}
+{% endwith %}
+</body>
+</html>
