@@ -1,0 +1,7 @@
+Flask
+requests
+beautifulsoup4
+selenium
+sqlite3
+python-dotenv
+Pillow
